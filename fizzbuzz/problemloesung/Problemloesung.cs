@@ -16,20 +16,12 @@ namespace problemloesung
 
         internal void Erstelle_Woerterbuch(int untergrenze, int obergrenze)
         {
-
+            Dictionary<int, string> woerterbuch_zahl = new Dictionary<int, string>();
             for (int i = untergrenze; i < obergrenze; i++)
             {
-
+                woerterbuch_zahl.Add(i, Convert.ToString(i));
             }
-
-            Dictionary<int, string> woerterbuch_liste = new Dictionary<int, string>();
-            woerterbuch_liste.Add(3);
-            woerterbuch_liste.Add(5);
-
-            //Kommentar
-            //woerterbuch_liste.Add(3, "Fuss");
-            //woerterbuch_liste.Add(5, "Buss");
-            //woerterbuch_liste.Add(3, "Fuss");
+            //return woerterbuch_zahl;
         }
     }
 }
