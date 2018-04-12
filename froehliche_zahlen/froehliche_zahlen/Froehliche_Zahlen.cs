@@ -10,13 +10,19 @@ namespace froehliche_zahlen
     {
         public static void Eingabe_der_Zahl()
         {
-            var zahl = Eingabe();
+            int zahl;
+            do
+            {
+            zahl = Zahl();
             var getrennteZahl = Zahl_trennen(zahl);
-            var quadrate = Quadrate_berechnen();
-            var summe = Summe_berechen();
+            var quadrate = Quadrate_berechnen(getrennteZahl);
+            var summe = Summe_berechen(quadrate);
+            //var ichbindasersteergebnis = überprüfe_Zahl(summe);
+            zahl = summe;
+            } while (zahl != 1 && zahl != 4);
         }
 
-        static int Eingabe()
+        static int Zahl()
         {
             Console.Write("Geben Sie eine Zahl ein: ");
             return Convert.ToInt32(Console.ReadLine());
@@ -41,12 +47,37 @@ namespace froehliche_zahlen
         }
         public static List<int> liste_füllen(List<int> liste, int zahl, int ziffernanzahl)
         {
-            string zahlstring = Convert.ToString(zahl);
             for (int i = 1; i <= ziffernanzahl; i++)
             {
-                liste.Add(Convert.ToInt32(zahlstring.Substring(i, 1)));
+                liste.Add(Convert.ToInt32(Convert.ToString(zahl).Substring(i, 1)));
             }
             return liste;
         }
+        public static List<int> Quadrate_berechnen(List<int> getrennteZahl)
+        {
+            for (int i = 0; i < getrennteZahl.Count; i++)
+            {
+                getrennteZahl[i] = getrennteZahl[i] * getrennteZahl[i];
+            }
+            return getrennteZahl;
+        }
+        public static int Summe_berechen(List<int> quadrate)
+        {
+            int summe = quadrate.Sum();
+            return summe;
+        }
+        //internal static int überprüfe_Zahl(int summe)
+        //{
+        //    switch (summe)
+        //    {
+        //        case 1:
+        //            return 1;
+        //        case 4:
+        //            return 4;
+        //        default:
+        //            return summe;
+
+        //    }
+        //}
     }
 }
