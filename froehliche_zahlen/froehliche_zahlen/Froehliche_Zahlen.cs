@@ -8,44 +8,44 @@ namespace froehliche_zahlen
 {
     public class Froehliche_Zahlen
     {
-        public static void Eingabe_der_Zahl()
+        public static int Berechnung(int zahl)
         {
-            int zahl;
             do
             {
-            zahl = Zahl();
+            //zahl = Zahl();
             var getrennteZahl = Zahl_trennen(zahl);
             var quadrate = Quadrate_berechnen(getrennteZahl);
             var summe = Summe_berechen(quadrate);
             //var ichbindasersteergebnis = überprüfe_Zahl(summe);
             zahl = summe;
             } while (zahl != 1 && zahl != 4);
+            return zahl;
         }
 
-        static int Zahl()
+        internal static int Zahl()
         {
-            Console.Write("Geben Sie eine Zahl ein: ");
-            return Convert.ToInt32(Console.ReadLine());
+            int zahlvorgabe = 1;
+            return zahlvorgabe;
         }
-        public static List<int> Zahl_trennen(int zahl)
+        internal static List<int> Zahl_trennen(int zahl)
         {
             var zifferanzahl = Zifferanzahl_ermitteln(zahl);
             var liste = Liste_erstellen();
             var gefüllte_liste = liste_füllen(liste, zahl, zifferanzahl);
             return gefüllte_liste;
         }
-        public static int Zifferanzahl_ermitteln(int zahl)
+        internal static int Zifferanzahl_ermitteln(int zahl)
         {
             string zahlstring = Convert.ToString(zahl);
             int ziffernanzahl = zahlstring.Length;
             return ziffernanzahl;
         }
-        public static List<int> Liste_erstellen()
+        internal static List<int> Liste_erstellen()
         {
             List<int> Liste = new List<int>();
             return Liste;
         }
-        public static List<int> liste_füllen(List<int> liste, int zahl, int ziffernanzahl)
+        internal static List<int> liste_füllen(List<int> liste, int zahl, int ziffernanzahl)
         {
             for (int i = 1; i <= ziffernanzahl; i++)
             {
@@ -53,7 +53,7 @@ namespace froehliche_zahlen
             }
             return liste;
         }
-        public static List<int> Quadrate_berechnen(List<int> getrennteZahl)
+        internal static List<int> Quadrate_berechnen(List<int> getrennteZahl)
         {
             for (int i = 0; i < getrennteZahl.Count; i++)
             {
@@ -61,23 +61,10 @@ namespace froehliche_zahlen
             }
             return getrennteZahl;
         }
-        public static int Summe_berechen(List<int> quadrate)
+        internal static int Summe_berechen(List<int> quadrate)
         {
             int summe = quadrate.Sum();
             return summe;
         }
-        //internal static int überprüfe_Zahl(int summe)
-        //{
-        //    switch (summe)
-        //    {
-        //        case 1:
-        //            return 1;
-        //        case 4:
-        //            return 4;
-        //        default:
-        //            return summe;
-
-        //    }
-        //}
     }
 }
