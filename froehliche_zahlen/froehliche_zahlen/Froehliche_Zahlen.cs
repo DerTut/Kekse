@@ -8,24 +8,21 @@ namespace froehliche_zahlen
 {
     public class Froehliche_Zahlen
     {
+        public static void Main()
+        {
+            Console.WriteLine(Berechnung(87));
+            Console.ReadLine();
+        }
         public static int Berechnung(int zahl)
         {
             do
             {
-            //zahl = Zahl();
             var getrennteZahl = Zahl_trennen(zahl);
             var quadrate = Quadrate_berechnen(getrennteZahl);
             var summe = Summe_berechen(quadrate);
-            //var ichbindasersteergebnis = überprüfe_Zahl(summe);
-            zahl = summe;
+            zahl = Convert.ToInt32(summe);
             } while (zahl != 1 && zahl != 4);
             return zahl;
-        }
-
-        internal static int Zahl()
-        {
-            int zahlvorgabe = 1;
-            return zahlvorgabe;
         }
         internal static List<int> Zahl_trennen(int zahl)
         {
@@ -49,7 +46,7 @@ namespace froehliche_zahlen
         {
             for (int i = 1; i <= ziffernanzahl; i++)
             {
-                liste.Add(Convert.ToInt32(Convert.ToString(zahl).Substring(i, 1)));
+                liste.Add(Convert.ToInt32(Convert.ToString(zahl).Substring(i-1, 1)));
             }
             return liste;
         }
@@ -57,6 +54,7 @@ namespace froehliche_zahlen
         {
             for (int i = 0; i < getrennteZahl.Count; i++)
             {
+                Console.WriteLine("test");
                 getrennteZahl[i] = getrennteZahl[i] * getrennteZahl[i];
             }
             return getrennteZahl;
