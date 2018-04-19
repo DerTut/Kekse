@@ -83,7 +83,7 @@ namespace Roman_Numb3rs
         }
         internal static string Vierhundert_abziehen(int arab_zahl, string roem_zahl, Dictionary<int, string> woerterbuch)
         {
-            if (arab_zahl > 400)
+            if (arab_zahl > 399)
             {
                 arab_zahl = arab_zahl - 400;
                 roem_zahl = roem_zahl + woerterbuch[400];
@@ -119,7 +119,7 @@ namespace Roman_Numb3rs
         }
         internal static string Vierzig_abziehen(int arab_zahl, string roem_zahl, Dictionary<int, string> woerterbuch)
         {
-            if (arab_zahl > 40)
+            if (arab_zahl > 39)
             {
                 arab_zahl = arab_zahl - 40;
                 roem_zahl = roem_zahl + woerterbuch[40];
@@ -155,7 +155,7 @@ namespace Roman_Numb3rs
         }
         internal static string Vier_abziehen(int arab_zahl, string roem_zahl, Dictionary<int, string> woerterbuch)
         {
-            if (arab_zahl > 4)
+            if (arab_zahl > 3)
             {
                 arab_zahl = arab_zahl - 4;
                 roem_zahl = roem_zahl + woerterbuch[4];
