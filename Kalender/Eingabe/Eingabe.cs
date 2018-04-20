@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Design;
-using Exit;
 using System.Threading.Tasks;
 
 namespace Eingabe
@@ -25,17 +24,18 @@ namespace Eingabe
             }
             else if (eingabe == "exit" || eingabe == "ende" || eingabe == "beenden")
             {
-                Exit.Exit.Beenden();
+                Exit.Beenden();
             }
             else
             {
+                Console.WriteLine(" Dieser Befehl existiert nicht.\n Versuchen Sie es bitte noch einmal");
                 Eingabe_ueberpruefen();
             }
             return 1;
         }
         internal static string Eingabe_eingeben()
         {
-            Console.Write("Calendar:>");
+            Console.Write(" Calendar:>");
             string eingabe = Console.ReadLine();
             return eingabe.ToLower();
         }

@@ -21,7 +21,8 @@ namespace Design
         }
        internal static int Kopfzeile_erstellen()
         {
-            Console.WriteLine("\n      April 2018");
+            string datum = Berechnungen.Datum();
+            Console.WriteLine("\n       " + datum);
             Console.WriteLine(" Mo Di Mi Do Fr Sa So");
             return 1;
         }

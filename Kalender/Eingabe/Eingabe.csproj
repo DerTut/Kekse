@@ -41,16 +41,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Eingabe.cs" />
+    <Compile Include="Exit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Design\Design.csproj">
       <Project>{5c875449-46d9-486e-9bbd-0c9f5ea706f9}</Project>
       <Name>Design</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Exit\Exit.csproj">
-      <Project>{9df38cff-0900-43d8-83ec-e33f69bd9ec9}</Project>
-      <Name>Exit</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
