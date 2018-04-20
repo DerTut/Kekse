@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Design;
+using Eingabe;
 using System.Threading.Tasks;
 
 namespace Kalender
@@ -11,7 +11,8 @@ namespace Kalender
     {
         static void Main(string[] args)
         {
-
+            Eingabe.Eingabe.Eingabe_ueberpruefen();
+            Console.ReadKey();
         }
     }
 }

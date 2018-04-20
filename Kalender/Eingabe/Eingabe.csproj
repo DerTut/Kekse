@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B58DCE68-D6F1-4AAF-A312-24F150F32360}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{498DCD48-164B-44EB-B9C3-064B9BEDAB0A}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Kalender</RootNamespace>
-    <AssemblyName>Kalender</AssemblyName>
+    <RootNamespace>Eingabe</RootNamespace>
+    <AssemblyName>Eingabe</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,16 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Eingabe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Eingabe\Eingabe.csproj">
-      <Project>{498dcd48-164b-44eb-b9c3-064b9bedab0a}</Project>
-      <Name>Eingabe</Name>
+    <ProjectReference Include="..\Design\Design.csproj">
+      <Project>{5c875449-46d9-486e-9bbd-0c9f5ea706f9}</Project>
+      <Name>Design</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Exit\Exit.csproj">
+      <Project>{9df38cff-0900-43d8-83ec-e33f69bd9ec9}</Project>
+      <Name>Exit</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
